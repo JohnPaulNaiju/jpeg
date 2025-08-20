@@ -1,4 +1,4 @@
-# C++ JPEG Compressor 📸
+# C++ JPEG Compressor 📸 (ongoing)
 
 This is a JPEG compressor built from scratch in C++. It takes a simple `.bmp` image and squishes it down into a `.jpg` file, all without using any external libraries.
 
