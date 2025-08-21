@@ -22,7 +22,17 @@ struct fileHeader{
 };
 
 struct infoHeader{
-    
+    uint32_t size{0};
+    uint32_t width{0};
+    uint32_t height{0};
+    uint16_t planes{1};
+    uint16_t bitsPerPixel{0};
+    uint32_t compression{0};
+    uint32_t imageSize{0};
+    uint32_t xPixelsPerM{0};
+    uint32_t yPixelsPerM{0};
+    uint32_t colorsUsed{0};
+    uint32_t importantColors{0};
 };
 
 #pragma pack(pop)
