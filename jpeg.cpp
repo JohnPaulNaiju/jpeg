@@ -37,5 +37,20 @@ struct pixel{
 
 int main(){
 
+    std::ifstream bmpFile;
+    std::string filePath;
+
+    while(true){
+
+        std::cout << "Enter the path to BMP image: ";
+        std::getline(std::cin, filePath);
+
+        bmpFile.open(filePath, std::ios_base::binary);
+
+        if(bmpFile) break;
+        else std::cerr << "Couldn't open file" << std::endl;
+
+    }
+
     return 0;
 };
