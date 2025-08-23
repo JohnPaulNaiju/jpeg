@@ -78,5 +78,9 @@ int main(){
     int stride = info_header.width * bytesPerPixel;
     int padding = ((info_header.width * 4) - (stride)) % 4;
 
+    std::vector<pixel> pixels;
+
+    pixels.resize(info_header.width * info_header.height);
+
     return 0;
 };

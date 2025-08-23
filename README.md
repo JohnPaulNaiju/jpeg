@@ -5,6 +5,7 @@ This is a JPEG compressor built from scratch in C++. It takes a simple `.bmp` im
 ## Key processes
 
 JPEG compression is a fascinating process that cleverly takes advantage of the flaws of our eyes. It's a multi-step pipeline that trims down data we're not likely to miss. The key processes include:
+
 - Color Space Conversion
 - Chrominance Downsampling
 - Discrete Cosine Transform (DCT)
