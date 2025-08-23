@@ -82,5 +82,8 @@ int main(){
 
     pixels.resize(info_header.width * info_header.height);
 
+    for(int i = 0; i < info_header.height; ++i){}
+
     return 0;
+
 };
