@@ -50,6 +50,10 @@ int main(){
         if(bmpFile) break;
         else std::cerr << "Couldn't open file" << std::endl;
 
+        fileHeader header;
+
+        bmpFile.read(reinterpret_cast<char*>(&header), sizeof(header));
+
     }
 
     return 0;
