@@ -50,11 +50,33 @@ int main(){
         if(bmpFile) break;
         else std::cerr << "Couldn't open file" << std::endl;
 
-        fileHeader header;
-
-        bmpFile.read(reinterpret_cast<char*>(&header), sizeof(header));
-
     }
+
+    fileHeader file_header;
+
+    bmpFile.read(reinterpret_cast<char*>(&file_header), sizeof(file_header));
+
+    if(file_header.signature != 0x4D42){
+        std::cerr << "Hey we only compress a .bmp file" << std::endl;
+        bmpFile.close();
+        return 1;
+    }
+
+    infoHeader info_header;
+
+    bmpFile.read(reinterpret_cast<char*>(&info_header), sizeof(info_header));
+
+    if(info_header.bitsPerPixel != 24){
+        std::cerr << "Hey we only compress a 24 bit .bmp file" << std::endl;
+        bmpFile.close();
+        return 1;
+    }
+
+    bmpFile.seekg(file_header.dataOffset, bmpFile.beg);
+
+    int bytesPerPixel = info_header.bitsPerPixel / 8;
+    int stride = info_header.width * bytesPerPixel;
+    int padding = ((info_header.width * 4) - (stride)) % 4;
 
     return 0;
 };
